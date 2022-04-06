@@ -6,12 +6,19 @@ body {
   align-items: center;
   flex-direction: column;
   
+  
 }
 .headerFont {
   font-family: 'VT323', monospace;
   text-decoration: underline;
   font-size: 25px;
-  height: 90px;
+  height: 100px;
+}
+.footerFont {
+  font-family: 'VT323', monospace;
+  padding-top: 50px;
+  font-size: 15px;
+
 }
 .calBody {
   display: flex;
