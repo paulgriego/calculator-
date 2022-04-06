@@ -16,30 +16,30 @@
   <div class =headerFont><h1>CALCULATOR</h1></div>
     <div class ="calBody">
       <div class="numberViewer">
-        <div class="numbers"> <p>0</p></div>
+        <div class="numbers"> <p id="numView">0</p></div>
       </div>
       <div class = "rowOne">
-        <div class="button"><button class="buttonnumber" type="button">7</button></div>
-        <div class="button"><button class="buttonnumber" type="button">8</button></div>
-        <div class="button"><button class="buttonnumber" type="button">9</button> </div>
+        <div class="button"><button class="buttonnumber" id = "seven" value ="7"type="button" onclick='returnSeven()'>7</button></div>
+        <div class="button"><button class="buttonnumber" id = "eight" value= "8" type="button" onclick='returnEight()'>8</button></div>
+        <div class="button"><button class="buttonnumber" id = "nine"  value= "9" type="button" onclick='returnNine()'>9</button> </div>
         <div class="button"><button class="buttonfuc"  type="button">+</button> </div>
       </div>
       <div class = "rowTwo">
-        <div class="button"><button class="buttonnumber" type="button">4</button></div>
-        <div class="button"><button class="buttonnumber" type="button">5</button></div>
-        <div class="button"><button class="buttonnumber" type="button">6</button> </div>
+        <div class="button"><button class="buttonnumber" id = "four" value= "4"  type="button" onclick='returnFour()'>4</button></div>
+        <div class="button"><button class="buttonnumber" id = "five" value= "5" type="button" onclick='returnFive()'>5</button></div>
+        <div class="button"><button class="buttonnumber" id = "six" value= "6" type="button" onclick='returnSix()'>6</button> </div>
         <div class="button"><button class="buttonfuc"  type="button">-</button></div>
       </div>
       <div class = "rowThree">
-        <div class="button"><button class="buttonnumber" type="button">1</button></div>
-        <div class="button"><button class="buttonnumber" type="button">2</button></div>
-        <div class="button"><button class="buttonnumber" type="button">3</button></div>
+        <div class="button"><button class="buttonnumber" id = "one" value= "1" type="button" onclick='returnOne()'>1</button></div>
+        <div class="button"><button class="buttonnumber" id = "two" value= "2" type="button" onclick='returnTwo()'>2</button></div>
+        <div class="button"><button class="buttonnumber" id = "three"  value= "3" type="button" onclick='returnThree()'>3</button></div>
         <div class="button"><button class="buttonfuc "" type="button">X</button></div>
       </div>
       <div class = "rowFour">
-        <div class="button"><button class="buttonnumber" type="button">0</button></div>
+        <div class="button"><button class="buttonnumber" id = "zero" value= "0" type="button" onclick='returnZero()'>0</button></div>
         <div class="button"><button  type="button">.</button></div>
-        <div class="button"><button type="button">C</button></div>
+        <div class="button"><button type="button" onclick='returnClear()'>C</button></div>
         <div class="button"><button class="buttonfuc" type ="button">÷</button></div>
       </div>
       <div class= "enter"> <button button  id="enter" type ="button">=</button></div>
