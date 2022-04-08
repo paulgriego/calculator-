@@ -1,90 +1,129 @@
 function add (a,b) {
-  return sum = a+b;
+  return a+b;
 }
 function subtract (a,b) {
-  return sum = a-b;
+  a-b;
 }
 function multiply (a,b) {
-  return sum = a*b;
+  a*b;
 } 
 function divide (a,b) {
-  return sum = (a)/(b);
+   (a)/(b);
 }
 
-function operateAdd (a,b) {
+function buttonInputAdd() {
+  buttonInput="add";
+  
 
- 
+}
+function buttonInputSubtract() {
+  buttonInput="subtract"
+}
+function buttonInputMultiply() {
+  buttonInput="multiply"
+  
+}
+function buttonInputDivide() {
+  buttonInput= "divide"
+  
+}
+
+function storeValue () {
+switch(buttonInput) {
+  case "add":
+    alert('add');
+    storedValue=userInput;
+    break;
+
+  case "subtract":
+    alert("subtract");
+    storedValue=userInput;
+    break;
+
+  case "multiply":
+    alert("multiply");
+    storedValue=userInput;
+    break;
+  
+  case "divide":
+    alert("divide");
+    storedValue=userInput;
+    break;
+}
 }
 
 
 
+let input=[];
+let userInput
+let storedValue;
+let buttonInput="noSelection"
+let total
+let inFunction="no"
 
-let sum=[];
-let sumJoined
 
-
-
-function numberViewer() {
-  sumJoined = sum.join('');
-document.getElementById("numView").innerHTML=sumJoined;
-return sumJoined= parseFloat(sumJoined)
+function parse() {
+  userInput = input.join('');
+  userInput= parseFloat(userInput);
+  document.getElementById("numView").innerHTML=userInput;
 }
 
 function returnOne() {
-  sum.push(1);
-  numberViewer();
+  input.push(1);
+  parse();
 }
 function returnTwo() {
-  sum.push(2);
-  numberViewer();
+  input.push(2);
+  parse();
 }
 function returnThree() {
-  sum.push(3);
-  numberViewer();
+  input.push(3);
+  parse();
 }
 function returnFour() {
-  sum.push(4);
-  numberViewer();
+  input.push(4);
+  parse();
 }
 function returnFive() {
-  sum.push(5);
-  numberViewer();
+  input.push(5);
+  parse();
 }
 function returnSix() {
-  sum.push(6);
-  numberViewer();
+  input.push(6);
+  parse();
 }
 function returnSeven() {
-  sum.push(7);
-  numberViewer();
+  input.push(7);
+  parse();
 }
 function returnEight() {
-  sum.push(8);
-  numberViewer();
+  input.push(8);
+  parse();
 }
 function returnNine() {
-  sum.push(9);
-  numberViewer();
+  input.push(9);
+  parse();
 }
 function returnZero() {
-  sum.push(0);
-  numberViewer();
+  input.push(0);
+  parse();
 }
 
 function returnZero() {
-  sum.push(0);
-  numberViewer();
+  input.push(0);
+  parse();
 }
 
 function returnDecimal() {
-  sum.push(".");
+  input.push(".");
   document.getElementById("deci").disabled = true;
-
-  numberViewer();
+  parse();
 }
 
 function returnClear() {
-  sum=[];
+  userInput="";
+  input=[];
   document.getElementById("deci").disabled = false;
-  numberViewer();
+  document.getElementById("numView").innerHTML=userInput;
+  buttonInput="noSelection"
 }

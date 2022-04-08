@@ -129,18 +129,13 @@ background-color: red;
   max-width: 345px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 40px;
-  
-}
-p {
   overflow: hidden;
- white-space: nowrap;
- text-overflow: ellipsis;
-
-
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
 }
 
 #deci[disabled]
 {
  background: rgb(122, 220, 127);
 }
-
