@@ -13,81 +13,70 @@ function divide (a,b) {
 
 function buttonInputAdd() {
   buttonInput="add";
-  document.getElementById("add").disabled = true;
+  
 }
 function buttonInputSubtract() {
   buttonInput="subtract"
+  
 }
 function buttonInputMultiply() {
   buttonInput="multiply"
+  
 }
 function buttonInputDivide() {
   buttonInput= "divide" 
+  
 }
 
 function storeValue () {
-  switch(buttonInput) {
-    case "add":
+  if(buttonInput=="add") {
+    storedValue=userInput;
+    input=[];
+    userInput="";
+    document.getElementById("numView").innerHTML=userInput;
+    document.getElementById("deci").disabled = false;
+  }else if(buttonInput=="multiply") {
       storedValue=userInput;
       input=[];
       userInput="";
       document.getElementById("numView").innerHTML=userInput;
       document.getElementById("deci").disabled = false;
-      break;
-
-    case "subtract":
+  
+  }else if(buttonInput=="subtract") {
       storedValue=userInput;
       input=[];
       userInput="";
       document.getElementById("numView").innerHTML=userInput;
       document.getElementById("deci").disabled = false;
-      break;
-
-    case "multiply":
+  }else if(buttonInput=="divide") {
       storedValue=userInput;
       input=[];
       userInput="";
       document.getElementById("numView").innerHTML=userInput;
       document.getElementById("deci").disabled = false;
-      break;
-    
-    case "divide":
-      storedValue=userInput;
-      input=[];
-      userInput="";
-      document.getElementById("numView").innerHTML=userInput;
-      document.getElementById("deci").disabled = false;
-      break;
-  }
-  }
+    }
+  } 
 
   function equal () {
-    switch(buttonInput) {
-      case "add":
+    if(buttonInput=="add") {
         total=add(storedValue,userInput);
         document.getElementById("numView").innerHTML=total;
-        document.getElementById("add").disabled = false;
         addToTotal="yes";
-        break;
-
-      case "multiply":
+    } else if(buttonInput=="multiply") {
         total=multiply(storedValue,userInput);
         total=Math.round(total * 100) / 100;
         document.getElementById("numView").innerHTML=total;
-        break;
-    
-      case "subtract":
+    } else if(buttonInput=="subtract") {
         total=subtract(storedValue,userInput);
         document.getElementById("numView").innerHTML=total;
-        break;
-    
-      case "divide":
+        
+    } else if(buttonInput=="divide") {
         total=divide(storedValue,userInput);
         total=Math.round(total * 100) / 100;
         document.getElementById("numView").innerHTML=total;
-        break;
-    }
-  }
+        
+      }
+    } 
   
 
 let input=[];
