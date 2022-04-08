@@ -2,72 +2,106 @@ function add (a,b) {
   return a+b;
 }
 function subtract (a,b) {
-  a-b;
+  return a-b;
 }
 function multiply (a,b) {
-  a*b;
+  return a*b;
 } 
 function divide (a,b) {
-   (a)/(b);
+  return (a)/(b);
 }
 
 function buttonInputAdd() {
   buttonInput="add";
-  
-
+  document.getElementById("add").disabled = true;
 }
 function buttonInputSubtract() {
   buttonInput="subtract"
 }
 function buttonInputMultiply() {
   buttonInput="multiply"
-  
 }
 function buttonInputDivide() {
-  buttonInput= "divide"
-  
+  buttonInput= "divide" 
 }
 
 function storeValue () {
-switch(buttonInput) {
-  case "add":
-    alert('add');
-    storedValue=userInput;
-    break;
+  switch(buttonInput) {
+    case "add":
+      storedValue=userInput;
+      input=[];
+      userInput="";
+      document.getElementById("numView").innerHTML=userInput;
+      document.getElementById("deci").disabled = false;
+      break;
 
-  case "subtract":
-    alert("subtract");
-    storedValue=userInput;
-    break;
+    case "subtract":
+      storedValue=userInput;
+      input=[];
+      userInput="";
+      document.getElementById("numView").innerHTML=userInput;
+      document.getElementById("deci").disabled = false;
+      break;
 
-  case "multiply":
-    alert("multiply");
-    storedValue=userInput;
-    break;
+    case "multiply":
+      storedValue=userInput;
+      input=[];
+      userInput="";
+      document.getElementById("numView").innerHTML=userInput;
+      document.getElementById("deci").disabled = false;
+      break;
+    
+    case "divide":
+      storedValue=userInput;
+      input=[];
+      userInput="";
+      document.getElementById("numView").innerHTML=userInput;
+      document.getElementById("deci").disabled = false;
+      break;
+  }
+  }
+
+  function equal () {
+    switch(buttonInput) {
+      case "add":
+        total=add(storedValue,userInput);
+        document.getElementById("numView").innerHTML=total;
+        document.getElementById("add").disabled = false;
+        addToTotal="yes";
+        break;
+
+      case "multiply":
+        total=multiply(storedValue,userInput);
+        total=Math.round(total * 100) / 100;
+        document.getElementById("numView").innerHTML=total;
+        break;
+    
+      case "subtract":
+        total=subtract(storedValue,userInput);
+        document.getElementById("numView").innerHTML=total;
+        break;
+    
+      case "divide":
+        total=divide(storedValue,userInput);
+        total=Math.round(total * 100) / 100;
+        document.getElementById("numView").innerHTML=total;
+        break;
+    }
+  }
   
-  case "divide":
-    alert("divide");
-    storedValue=userInput;
-    break;
-}
-}
-
-
 
 let input=[];
-let userInput
+let userInput;
 let storedValue;
-let buttonInput="noSelection"
-let total
-let inFunction="no"
-
+let buttonInput="noSelection";
+let total;
+let addToTotal ="no";
 
 function parse() {
   userInput = input.join('');
   userInput= parseFloat(userInput);
   document.getElementById("numView").innerHTML=userInput;
 }
-
 function returnOne() {
   input.push(1);
   parse();
@@ -108,22 +142,20 @@ function returnZero() {
   input.push(0);
   parse();
 }
-
 function returnZero() {
   input.push(0);
   parse();
 }
-
 function returnDecimal() {
   input.push(".");
   document.getElementById("deci").disabled = true;
   parse();
 }
-
 function returnClear() {
   userInput="";
   input=[];
   document.getElementById("deci").disabled = false;
   document.getElementById("numView").innerHTML=userInput;
-  buttonInput="noSelection"
+  buttonInput="noSelection";
+  addToTotal="no";
 }
