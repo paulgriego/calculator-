@@ -334,9 +334,10 @@ function returnZero() {
   parse();
 }
 function returnDecimal() {
-  input.push(".");
+  input.push("0.");
   document.getElementById("deci").disabled = true;
   parse();
+
 }
 //function to clear/reset cal
 function returnClear() {
