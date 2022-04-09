@@ -287,6 +287,11 @@ function parse() {
   userInput= parseFloat(userInput);
   document.getElementById("numView").innerHTML=userInput;
 }
+function parsedeci() {
+  userInput = input.join('');
+  userInput= parseFloat(userInput);
+  
+}
 //functions for user input
 function returnOne() {
   input.push(1);
@@ -334,9 +339,9 @@ function returnZero() {
   parse();
 }
 function returnDecimal() {
-  input.push("0.");
+  input.push(".");
   document.getElementById("deci").disabled = true;
-  parse();
+  parsedeci();
 
 }
 //function to clear/reset cal
