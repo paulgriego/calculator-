@@ -29,56 +29,133 @@ function buttonInputDivide() {
 }
 
 function storeValue () {
-  if(buttonInput=="add") {
+  if(buttonInput=="add" && addToTotal =="no") {
     storedValue=userInput;
     input=[];
     userInput="";
     document.getElementById("numView").innerHTML=userInput;
     document.getElementById("deci").disabled = false;
-  }else if(buttonInput=="multiply") {
-      storedValue=userInput;
-      input=[];
-      userInput="";
-      document.getElementById("numView").innerHTML=userInput;
-      document.getElementById("deci").disabled = false;
+    document.getElementById("add").disabled = true;
+
+  }else if(buttonInput=="add" && addToTotal =="yes") {
+    storedValue=total;  
+    input=[];
+    userInput="";  
+    document.getElementById("numView").innerHTML=userInput;
+    document.getElementById("add").disabled = true;
+
+}
+  if(buttonInput=="subtract" && addToTotal =="no") {
+    storedValue=userInput;
+    input=[];
+    userInput="";
+    document.getElementById("numView").innerHTML=userInput;
+    document.getElementById("deci").disabled = false;
+    document.getElementById("subtract").disabled = true;
+
+  }else if(buttonInput=="subtract" && addToTotal =="yes") {
+    storedValue=total;  
+    input=[];
+    userInput="";  
+    document.getElementById("numView").innerHTML=userInput;
+    document.getElementById("subtract").disabled = true;
+
+  }
+  if(buttonInput=="multiply" && addToTotal =="no") {
+    storedValue=userInput;
+    input=[];
+    userInput="";
+    document.getElementById("numView").innerHTML=userInput;
+    document.getElementById("deci").disabled = false;
+    document.getElementById("multiply").disabled = true;
+
+  }else if(buttonInput=="multiply" && addToTotal =="yes") {
+    storedValue=total;  
+    input=[];
+    userInput="";  
+    document.getElementById("numView").innerHTML=userInput;
+    document.getElementById("multiply").disabled = true;
+
+  }
+
+  // }else if(buttonInput=="multiply") {
+  //     storedValue=userInput;
+  //     input=[];
+  //     userInput="";
+  //     document.getElementById("numView").innerHTML=userInput;
+  //     document.getElementById("deci").disabled = false;
   
-  }else if(buttonInput=="subtract") {
-      storedValue=userInput;
-      input=[];
-      userInput="";
-      document.getElementById("numView").innerHTML=userInput;
-      document.getElementById("deci").disabled = false;
-  }else if(buttonInput=="divide") {
-      storedValue=userInput;
-      input=[];
-      userInput="";
-      document.getElementById("numView").innerHTML=userInput;
-      document.getElementById("deci").disabled = false;
+  // }else if(buttonInput=="subtract") {
+  //     storedValue=userInput;
+  //     input=[];
+  //     userInput="";
+  //     document.getElementById("numView").innerHTML=userInput;
+  //     document.getElementById("deci").disabled = false;
+  // }else if(buttonInput=="divide") {
+  //     storedValue=userInput;
+  //     input=[];
+  //     userInput="";
+  //     document.getElementById("numView").innerHTML=userInput;
+  //     document.getElementById("deci").disabled = false;
     }
-  } 
+   
 
   function equal () {
-    if(buttonInput=="add") {
+
+    if(buttonInput=="add" && addToTotal =="no") {
         total=add(storedValue,userInput);
         document.getElementById("numView").innerHTML=total;
         addToTotal="yes";
-    } else if(buttonInput=="multiply") {
-        total=multiply(storedValue,userInput);
-        total=Math.round(total * 100) / 100;
-        document.getElementById("numView").innerHTML=total;
-    } else if(buttonInput=="subtract") {
-        total=subtract(storedValue,userInput);
-        document.getElementById("numView").innerHTML=total;
+        document.getElementById("add").disabled = false;
+
+    }else if(buttonInput=="add" && addToTotal =="yes") {
+      total=add(storedValue,userInput);
+      document.getElementById("numView").innerHTML=total;
+      document.getElementById("add").disabled = false;
+
+    }
+
+    if(buttonInput=="subtract" && addToTotal =="no") {
+      total=subtract(storedValue,userInput);
+      document.getElementById("numView").innerHTML=total;
+      addToTotal="yes";
+      document.getElementById("subtract").disabled = false;
+
+    }else if(buttonInput=="subtract" && addToTotal =="yes") {
+      total=subtract(storedValue,userInput);
+      document.getElementById("numView").innerHTML=total;
+      document.getElementById("subtract").disabled = false;
+
+    }
+    if(buttonInput=="multiply" && addToTotal =="no") {
+      total=multiply(storedValue,userInput);
+      document.getElementById("numView").innerHTML=total;
+      addToTotal="yes";
+      document.getElementById("multiply").disabled = false;
+
+    }else if(buttonInput=="multiply" && addToTotal =="yes") {
+      total=multiply(storedValue,userInput);
+      document.getElementById("numView").innerHTML=total;
+      document.getElementById("multiply").disabled = false;
+
+    }
+
+    // } else if(buttonInput=="multiply") {
+    //     total=multiply(storedValue,userInput);
+    //     total=Math.round(total * 100) / 100;
+    //     document.getElementById("numView").innerHTML=total;
+    // } else if(buttonInput=="subtract") {
+    //     total=subtract(storedValue,userInput);
+    //     document.getElementById("numView").innerHTML=total;
         
-    } else if(buttonInput=="divide") {
-        total=divide(storedValue,userInput);
-        total=Math.round(total * 100) / 100;
-        document.getElementById("numView").innerHTML=total;
+    // } else if(buttonInput=="divide") {
+    //     total=divide(storedValue,userInput);
+    //     total=Math.round(total * 100) / 100;
+    //     document.getElementById("numView").innerHTML=total;
         
-      }
+    //   }
     } 
   
-
 let input=[];
 let userInput;
 let storedValue;
@@ -94,6 +171,7 @@ function parse() {
 function returnOne() {
   input.push(1);
   parse();
+  
 }
 function returnTwo() {
   input.push(2);
