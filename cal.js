@@ -1,16 +1,20 @@
+//function to add two variables
 function add (a,b) {
   return a+b;
 }
+//function to subtract two variables
 function subtract (a,b) {
   return a-b;
 }
+//function to multiply two variables
 function multiply (a,b) {
   return a*b;
 } 
+//function to divide two variables
 function divide (a,b) {
   return (a)/(b);
 }
-
+//functions to define operator clicked
 function buttonInputAdd() {
   buttonInput="add";
   
@@ -28,6 +32,7 @@ function buttonInputDivide() {
   
 }
 
+//stores function  value to userinput 
 function storeValue () {
   if(buttonInput=="add" && addToTotal =="no") {
     storedValue=userInput;
@@ -40,7 +45,7 @@ function storeValue () {
     document.getElementById("multiply").disabled = true;
     document.getElementById("divide").disabled = true;
 
-
+//stores function  total to userinput (if user is eval multiple numbers)
   }else if(buttonInput=="add" && addToTotal =="yes") {
     storedValue=total;  
     input=[];
@@ -139,9 +144,8 @@ function storeValue () {
 
     }
    
-
+//operates based on buttonInput value and gives total while disabling some buttons
   function equal () {
-
     if(buttonInput=="add" && addToTotal =="no") {
       total=add(storedValue,userInput);
       document.getElementById("numView").innerHTML=total;
@@ -270,19 +274,20 @@ function storeValue () {
 
     }
     } 
-  
+//global var to hold different inputs 
 let input=[];
 let userInput;
 let storedValue;
 let buttonInput="noSelection";
 let total;
 let addToTotal ="no";
-
+//converts userinput into a interger
 function parse() {
   userInput = input.join('');
   userInput= parseFloat(userInput);
   document.getElementById("numView").innerHTML=userInput;
 }
+//functions for user input
 function returnOne() {
   input.push(1);
   parse();
@@ -333,6 +338,7 @@ function returnDecimal() {
   document.getElementById("deci").disabled = true;
   parse();
 }
+//function to clear/reset cal
 function returnClear() {
   userInput="";
   input=[];
