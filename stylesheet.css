@@ -135,7 +135,7 @@ background-color: red;
   
 }
 
-#deci[disabled]
+.buttonnumber[disabled]
 {
  background: rgb(122, 220, 127);
 }

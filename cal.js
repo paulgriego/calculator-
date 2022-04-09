@@ -50,6 +50,10 @@ function storeValue () {
     document.getElementById("subtract").disabled = true;
     document.getElementById("multiply").disabled = true;
     document.getElementById("divide").disabled = true;
+    var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = false;
+      }
     
 
 }
@@ -73,6 +77,10 @@ function storeValue () {
     document.getElementById("subtract").disabled = true;
     document.getElementById("multiply").disabled = true;
     document.getElementById("divide").disabled = true;
+    var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = false;
+      }
 
   }
   if(buttonInput=="multiply" && addToTotal =="no") {
@@ -95,6 +103,10 @@ function storeValue () {
     document.getElementById("subtract").disabled = true;
     document.getElementById("multiply").disabled = true;
     document.getElementById("divide").disabled = true;
+    var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = false;
+      }
 
   }
   if(buttonInput=="divide" && addToTotal =="no") {
@@ -117,6 +129,10 @@ function storeValue () {
     document.getElementById("subtract").disabled = true;
     document.getElementById("multiply").disabled = true;
     document.getElementById("divide").disabled = true;
+    var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = false;
+      }
 
   }
 
@@ -135,6 +151,11 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+      
 
     }else if(buttonInput=="add" && addToTotal =="yes") {
       total=add(storedValue,userInput);
@@ -144,6 +165,10 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
 
     }
 
@@ -156,6 +181,12 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+
+      
 
     }else if(buttonInput=="subtract" && addToTotal =="yes") {
       total=subtract(storedValue,userInput);
@@ -165,6 +196,11 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+
 
     }
     if(buttonInput=="multiply" && addToTotal =="no") {
@@ -177,6 +213,11 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+
 
     }else if(buttonInput=="multiply" && addToTotal =="yes") {
       total=multiply(storedValue,userInput);
@@ -187,6 +228,11 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+
 
     }
     if(buttonInput=="divide" && addToTotal =="no") {
@@ -199,6 +245,11 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+
 
     }else if(buttonInput=="divide" && addToTotal =="yes") {
       total=divide(storedValue,userInput);
@@ -209,6 +260,11 @@ function storeValue () {
       document.getElementById("subtract").disabled = false;
       document.getElementById("multiply").disabled = false;
       document.getElementById("divide").disabled = false;
+      var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = true;
+      }
+
 
     }
     } 
@@ -282,4 +338,8 @@ function returnClear() {
   document.getElementById("numView").innerHTML=userInput;
   buttonInput="noSelection";
   addToTotal="no";
+  var buttonNum = document.getElementsByClassName("buttonnumber");
+      for(var i = 0; i < buttonNum.length; i++) {
+      buttonNum[i].disabled = false;
+      }
 }
