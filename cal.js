@@ -174,6 +174,7 @@ function storeValue () {
 
     if(buttonInput=="subtract" && addToTotal =="no") {
       total=subtract(storedValue,userInput);
+      total=Math.round(total * 100) / 100
       document.getElementById("numView").innerHTML=total;
       addToTotal="yes";
       document.getElementById("deci").disabled = false;
@@ -190,6 +191,7 @@ function storeValue () {
 
     }else if(buttonInput=="subtract" && addToTotal =="yes") {
       total=subtract(storedValue,userInput);
+      total=Math.round(total * 100) / 100
       document.getElementById("deci").disabled = false;
       document.getElementById("numView").innerHTML=total;
       document.getElementById("add").disabled = false;
